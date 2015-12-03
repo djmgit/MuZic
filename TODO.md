@@ -1,6 +1,6 @@
 ###Things to do : 
 
-* Add Background Image(allow user to select the background image ?)
+* Add Background Image(allow user to select the background image ?) (or use the album cover as the background image ?)
 * Tabs - 
 	- Media Player
 	- Artists
