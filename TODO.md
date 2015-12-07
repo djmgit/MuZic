@@ -1,6 +1,6 @@
 ###Things to do : 
 
-* Add Background Image(allow user to select the background image ?) (or use the album cover as the background image ?)
+* Add Background Image(allow user to select the background image ?) (or use the album cover as the background image ? With gradient (upper and lower part will be darker than the middle part))
 * Tabs - 
 	- Media Player
 	- Artists
