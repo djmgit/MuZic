@@ -1,11 +1,13 @@
 package com.prizm.muzic;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,7 +30,7 @@ public class MainActivity extends Activity
 
         lv=(ListView)findViewById(R.id.lvPlayList);
 
-        ArrayList<File> mySongs = findSongs(Environment.getExternalStorageDirectory());
+        final ArrayList<File> mySongs = findSongs(Environment.getExternalStorageDirectory());
         items = new String[mySongs.size()];
         for (int i=0;i<mySongs.size();i++)
         {
@@ -37,6 +39,14 @@ public class MainActivity extends Activity
         }
         ArrayAdapter<String> adp = new ArrayAdapter<String>(getApplicationContext(), R.layout.song_layout,R.id.textView,items);
         lv.setAdapter(adp);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id)
+            {
+                // Send the whole  songs list (mySongs) to Player.class, where the song will be played when clicked
+                startActivity(new Intent(getApplicationContext(), Player.class).putExtra("pos",position).putExtra("songslist",mySongs));
+            }
+        });
     }
 
     public ArrayList<File> findSongs(File root)

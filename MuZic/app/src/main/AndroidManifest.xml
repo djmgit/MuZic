@@ -3,7 +3,7 @@
     package="com.prizm.muzic" >
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +17,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Player"
+            android:label="@string/title_activity_player" >
         </activity>
     </application>
 
